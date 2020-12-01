@@ -6,7 +6,9 @@ const SearchBar = ({
   onSubmit = () => { }
 }) => {
 
-  const [text, setText] = useState(null);
+  const [text, setText] = useState('cl4u2');
+  // cl4u2
+  // quanghuyhh
 
   const onInputChange = (event) => {
     setText(event.target.value);

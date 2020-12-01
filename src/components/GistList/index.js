@@ -1,12 +1,15 @@
-const GistList = () => {
+import GistListItem from '../GistListItem';
+import style from './styles';
 
-  return (<ol>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-  </ol>);
+const GistList = ({ data = [] }) => {
+
+  if(data.length === 0) {
+    return <div>No gists to display</div>
+  }
+  
+  return <ol style={style.root}>
+    {data.map(gist => <GistListItem key={gist.id} gist={gist}/>)}
+  </ol>;
 }
 
 export default GistList;

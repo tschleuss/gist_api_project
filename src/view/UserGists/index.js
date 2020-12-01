@@ -1,11 +1,21 @@
+import { useState } from 'react';
 import styles from './styles';
 import SearchBar from '../../components/SearchBar';
 import GistList from '../../components/GistList';
+import api from '../../app/api/apiCore';
 
 const UserGists = () => {
 
-  const onSubmitSearch = (term) => {
-    console.log(term);
+  const [userGists, setUserGists] = useState([]);
+
+  const onSubmitSearch = async (term) => {
+    try {
+      const response = await api.getGistsByUsername(term);
+      console.log(response);
+      setUserGists(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -14,7 +24,7 @@ const UserGists = () => {
         <SearchBar placeholder="Search by git user" onSubmit={onSubmitSearch} />
       </header>
       <section>
-        <GistList />
+        <GistList data={userGists}/>
       </section>
     </div>
   )
