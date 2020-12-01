@@ -30,3 +30,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - Optmization of what props are being passed down on components, I'm using just a few, but kept all of them on the model. 
 - Probably we could make it visually better with loading states, images, icons and so on
 - Optimization to fetch fork data (I'm fetching for all rows at once), pagination, lazy loading (GraphQL maybe)
+
+## Screenshot
+
+![Home screen](https://i.imgur.com/oDlORIn.png "Home screen")
