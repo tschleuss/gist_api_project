@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import style from './styles';
 
-const TypeBadge = ({ name, color }) => {
+const TypeBadge = ({ name }) => {
   return <span style={style.root}>{name}</span>
 };
 
-export default TypeBadge;
+export default memo(TypeBadge);

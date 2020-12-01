@@ -10,11 +10,10 @@ const UserGists = () => {
 
   const onSubmitSearch = async (term) => {
     try {
-      const response = await api.getGistsByUsername(term);
-      console.log(response);
-      setUserGists(response);
+      setUserGists(await api.getGistsByUsername(term));
     } catch (error) {
       console.log(error);
+      setUserGists([]);
     }
   };
 
@@ -24,7 +23,7 @@ const UserGists = () => {
         <SearchBar placeholder="Search by git user" onSubmit={onSubmitSearch} />
       </header>
       <section>
-        <GistList data={userGists}/>
+        <GistList data={userGists} />
       </section>
     </div>
   )

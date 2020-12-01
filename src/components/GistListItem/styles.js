@@ -15,13 +15,17 @@ const styles = {
   },
   description: {
     padding: '5px 0',
+    display: 'block',
+    textDecoration: 'none',
+    color: '#0366d6',
   },
   tags: {
     display: 'flex',
     justifyContent: 'start',
   },
   forks: {
-
+    listStyle: 'none',
+    padding: '0',
   },
   userAvatar: {
     borderRadius: '50%',

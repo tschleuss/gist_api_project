@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import style from './styles';
 
 const ForkedBy = ({ fork }) => {
@@ -15,4 +16,4 @@ const ForkedBy = ({ fork }) => {
   </li>
 }
 
-export default ForkedBy;
+export default memo(ForkedBy);
